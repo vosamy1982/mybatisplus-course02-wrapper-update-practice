@@ -17,13 +17,13 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Practice4：select 字段裁剪（TODO 填空题）
  * 对应课件 3.4 节
  *
- * <h3>练习要求</h3>
- * 列表查询场景：只查 4 列 {@code id / name / department / salary}，
+ * 【练习要求】
+ * 列表查询场景：只查 4 列 id / name / department / salary，
  * 其余字段在返回结果中应为 null（节省传输带宽）。
  *
- * <p>在 wrapper 上加上字段裁剪调用，并加一个 WHERE 限定查"技术部"。
+ * 在 wrapper 上加上字段裁剪调用，并加一个 WHERE 限定查"技术部"。
  *
- * <p>完成后删除 {@code @Disabled} 注解，运行测试应通过断言。
+ * 完成后删除 @Disabled 注解，运行测试应通过断言。
  */
 @SpringBootTest
 class Practice4_SelectTrimTest {

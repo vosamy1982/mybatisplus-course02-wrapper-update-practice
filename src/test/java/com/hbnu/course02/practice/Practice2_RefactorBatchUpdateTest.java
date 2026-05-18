@@ -15,12 +15,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Practice2：重构批量更新（重构改造题）
  * 对应课件 3.2 节 "update 的两种重载"
  *
- * <h3>练习要求</h3>
- * 打开 {@link BatchUpdateLegacyService} 看代码 —— 它先 selectList 查出所有目标，再循环 updateById。
- * <p>请重构该 service 的 {@code renameDepartment} 方法，改用 <b>一次</b>
- * {@code empMapper.update(null, Wrappers.<Employee>lambdaUpdate()...)} 调用完成。
+ * 【练习要求】
+ * 打开 BatchUpdateLegacyService 看代码 —— 它先 selectList 查出所有目标，再循环 updateById。
+ * 请重构该 service 的 renameDepartment 方法，改用一次
+ * empMapper.update(null, Wrappers.<Employee>lambdaUpdate()...) 调用完成。
  *
- * <p>本测试的断言**重构前和重构后都应通过**（因为只断言行为正确性）。
+ * 本测试的断言重构前和重构后都应通过（因为只断言行为正确性）。
  * 重构成功的判定标准：观察 SQL 日志 —— 从 "SELECT + N 次 UPDATE" 变成 "1 次 UPDATE"。
  */
 @SpringBootTest

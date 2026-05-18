@@ -17,21 +17,19 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Practice3：动态搜索（从零编写题）
  * 对应课件 3.3 节 "and/or 嵌套"
  *
- * <h3>练习要求</h3>
- * 从零实现 {@link #search} 方法，要求生成的查询满足以下规则：
- * <ol>
- *   <li>keyword 非空时：name 或 position 任意一个模糊匹配 keyword（OR 关系，括号包住）</li>
- *   <li>department 非空时：精确等于 department</li>
- *   <li>minSalary 非空时：salary &gt;= minSalary</li>
- *   <li>maxSalary 非空时：salary &lt;= maxSalary</li>
- *   <li>2 ~ 4 之间是 AND 关系</li>
- *   <li>结果按 hire_date 倒序排序</li>
- * </ol>
+ * 【练习要求】
+ * 从零实现 search 方法，要求生成的查询满足以下规则：
+ *   1. keyword 非空时：name 或 position 任意一个模糊匹配 keyword（OR 关系，括号包住）
+ *   2. department 非空时：精确等于 department
+ *   3. minSalary 非空时：salary >= minSalary
+ *   4. maxSalary 非空时：salary <= maxSalary
+ *   5. 上述 2 ~ 4 之间是 AND 关系
+ *   6. 结果按 hire_date 倒序排序
  *
- * <p>关键提示：keyword 那组 OR 必须用 lambda 分组（{@code .and(w -> w.like(...).or().like(...))}），
- * 不能用顶层裸 {@code .or()}（会引发课件 3.3 节讲到的"意图扭曲"坑）。
+ * 关键提示：keyword 那组 OR 必须用 lambda 分组（.and(w -> w.like(...).or().like(...))），
+ * 不能用顶层裸 .or()（会引发课件 3.3 节讲到的"意图扭曲"坑）。
  *
- * <p>完成后删除 {@code @Disabled} 注解。
+ * 完成后删除 @Disabled 注解。
  */
 @SpringBootTest
 class Practice3_DynamicSearchTest {

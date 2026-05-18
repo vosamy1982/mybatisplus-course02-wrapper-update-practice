@@ -16,17 +16,15 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Practice1：LambdaUpdateWrapper 基础（TODO 填空题）
  * 对应课件 3.2 节
  *
- * <h3>练习要求</h3>
- * 把所有 <b>status = 0</b> 且 <b>update_time &lt; cutoff</b> 的员工的 status 改为 2（离职）。
- * <ol>
- *   <li>构造 {@code Wrappers.<Employee>lambdaUpdate()}</li>
- *   <li>用 {@code .set(...)} 设置新的 status 值</li>
- *   <li>用 {@code .eq(...)} 限定原 status</li>
- *   <li>用 {@code .lt(...)} 限定 update_time</li>
- *   <li>调用 {@code empMapper.update(null, wrapper)}</li>
- * </ol>
+ * 【练习要求】
+ * 把所有 status = 0 且 update_time < cutoff 的员工的 status 改为 2（离职）。
+ *   1. 构造 Wrappers.<Employee>lambdaUpdate()
+ *   2. 用 .set(...) 设置新的 status 值
+ *   3. 用 .eq(...) 限定原 status
+ *   4. 用 .lt(...) 限定 update_time
+ *   5. 调用 empMapper.update(null, wrapper)
  *
- * <p>完成后删除 {@code @Disabled} 注解，运行测试应通过断言。
+ * 完成后删除 @Disabled 注解，运行测试应通过断言。
  */
 @SpringBootTest
 @Transactional
